@@ -24,34 +24,52 @@ if (!isset($_SESSION['userID']))
         <?php require 'searchbar.php' ?>
         <div class="inner-content">
             <div class="left">
+                <input type="hidden" id="user-id" value="<?php echo $_SESSION['userID'] ?>"></input>
                 <div class="field">
                     <h3>Change Username</h3>
                     <input type="text" id="username-change" placeholder="Enter New Username"></input>
                     <button id="username-change-button">Confirm</button>
+                    <div id="username-response"></div>
                 </div>
                 <div class="field">
                     <h3>Change Password</h3>
-                    <input type="text" id="current-password" placeholder="Enter Password"></input><br>
-                    <input type="text" id="new-password" placeholder="Enter New Password"></input><br>
-                    <input type="text" id="new-password-repeat" placeholder="Repeat New Password"></input>
+                    <p>Current Password</p>
+                    <input type="password" id="current-password" placeholder="Enter Password"></input><br>
+                    <p>New Password</p>
+                    <input type="password" id="new-password" placeholder="Enter New Password"></input><br>
+                    <input type="password" id="new-password-repeat" placeholder="Repeat New Password"></input>
                     <button id="password-change-button">Confirm</button>
+                    <div id="password-response"></div>
                 </div>
                 <div class="field">
                     <h3>Change Profile Picture</h3>
-                    <input type="file">
-                    <button id="pfp-change-button">Confirm</button>
+                    <form action="update_pfp.php" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="userid" value="<?php echo $_SESSION['userID'] ?>">
+                        <input type="file" name="pfp" id="pfp-file">
+                        <input type="submit" value="Confirm">
+                        <div id="pfp-response">
+                            <?php 
+                                if (isset($_GET['r'])) {
+                                    if ($_GET['r'] == "pfperror") {
+                                        echo "File is too large or is an invalid type";
+                                    }
+                                }
+                            ?>
+                        </div>
+                    </form>
                 </div>
             </div>
             <div class="right">
                 <div>
                     <?php 
+                    echo "<label for='pfp-file'>";
                     if ($user['profile_picture_url'] == "") {
                         echo "<img src='media/images/default-pfp.jpg' alt='pfp'>";
                     }
                     else {
-                        echo "<img src='media/images/" . $user['profile_picture_url'] . "'>";
+                        echo "<img src='" . $user['profile_picture_url'] . "'>";
                     }
-                    echo "<h2>" . $user['username'] . "</h2>";
+                    echo "</label><br><label for='username-change'><h2>" . $user['username'] . "</h2></label>";
                     ?>
                 </div>
             </div>
@@ -62,8 +80,6 @@ if (!isset($_SESSION['userID']))
 
         </div>
     </div>
-    <script>
-        document.getElementById("login-button").addEventListener("click", loginSubmit);
-    </script>
+    <script src="js/user.js"></script>
 </body>
 </html>

@@ -3,7 +3,7 @@
     <div class="header-content">
         <div class="logo-container">
             <!--CHANGE LOGO-->
-            <a href="index.php"><h1 class="logo">WATCHIT</h1></a>
+            <a href="index.php"><h1 class="logo">WatchIt</h1></a>
         </div>
         <div class="account-info">
             <?php 
@@ -25,7 +25,7 @@
                         echo "<li>" . "<img src='media/images/default-pfp.jpg' alt='pfp'>" . "</li>";
                     }
                     else {
-                        echo "<li>" . "<img src='media/images/" . $user['profile_picture_url'] . "'>" . "</li>";
+                        echo "<li>" . "<img src='" . $user['profile_picture_url'] . "'>" . "</li>";
                     }
 
                     echo
