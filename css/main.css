@@ -35,3 +35,42 @@ h2 {
     color: rgb(221, 18, 18);
     text-align: center;
 }
+
+.video-list {
+    display: grid;
+    margin: 40px 0;
+    border: 1px solid rgb(131, 131, 131);
+}
+
+.video-preview {
+    width: 20%;
+    margin: 1%;
+    border: 1px solid rgb(131, 131, 131);
+    padding: 10px;
+}
+
+.video-preview a {
+    font-size: 1.3em;
+    color: inherit;
+}
+
+.video-preview a:hover {
+    color:rgb(131, 131, 131);
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.thumbnail-container img {
+    width: 100%;
+}
+
+.uploader-pfp {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+hr {
+    border-top: 1px solid rgb(131, 131, 131);
+}

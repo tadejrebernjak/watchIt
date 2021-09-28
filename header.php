@@ -2,8 +2,7 @@
 <div class="header">
     <div class="header-content">
         <div class="logo-container">
-            <!--CHANGE LOGO-->
-            <a href="index.php"><h1 class="logo">WatchIt</h1></a>
+            <a href="index.php"><img src="media/images/logo.png" alt="WatchIT"></a>
         </div>
         <div class="account-info">
             <?php 
@@ -18,14 +17,14 @@
                     include 'select_user.php';
                     echo
                     "<ul>"
-
+                        . "<li>" . "<a href='upload.php'>" . "<img src='media/images/upload-video-icon.png' class='upload-icon'>" . "</a>"
                         . "<li>" . "<a class='username' href='user.php'>" . $user['username'] . "</a>" . "</li>";
 
                     if ($user['profile_picture_url'] == "") {
-                        echo "<li>" . "<img src='media/images/default-pfp.jpg' alt='pfp'>" . "</li>";
+                        echo "<li>" . "<img src='media/images/default-pfp.jpg' alt='pfp' class='header-pfp'>" . "</li>";
                     }
                     else {
-                        echo "<li>" . "<img src='" . $user['profile_picture_url'] . "'>" . "</li>";
+                        echo "<li>" . "<img src='" . $user['profile_picture_url'] . "' class='header-pfp'>" . "</li>";
                     }
 
                     echo

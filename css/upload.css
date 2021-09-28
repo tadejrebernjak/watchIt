@@ -1,0 +1,65 @@
+.upload-form {
+    width: 70%;
+    padding: 30px;
+    margin:  30px auto;
+    border: 1px solid rgb(131, 131, 131);
+    border-radius: 5px;
+}
+
+.upload-form * {
+    display: block;
+}
+
+.upload-form input {
+    margin: 20px 0;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+textarea {
+    width: 100%;
+    margin: 20px 0;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.upload-form select {
+    margin: 20px 0;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.upload-form input[type=text] {
+    width: 100%;
+}
+
+.upload-form input:focus, textarea:focus, select:focus {
+    border-color: rgb(184, 184, 184);
+    transition: 0.3s;
+}
+
+.upload-form input[type=submit] {
+    padding: 10px;
+    font-size: 1.1em;
+    float: right;
+}
+
+.upload-form input[type=submit]:hover {
+    border-color: rgb(184, 184, 184);
+    transition: 0.3s;
+}
