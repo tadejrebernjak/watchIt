@@ -37,7 +37,7 @@ h2 {
 }
 
 .video-list {
-    display: grid;
+    display: flex;
     margin: 40px 0;
     border: 1px solid rgb(131, 131, 131);
 }
@@ -69,6 +69,7 @@ h2 {
     height: 50px;
     border-radius: 50%;
     margin-right: 20px;
+    object-fit: cover;
 }
 
 hr {

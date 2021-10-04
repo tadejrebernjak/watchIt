@@ -1,0 +1,174 @@
+.video-container {
+    width: 1000px;
+    margin: 10px auto;
+    display: block;
+}
+
+.video-container video {
+    width: 1000px;
+    max-height: 600px;
+    border: 1px solid rgb(131, 131, 131);
+}
+
+table.uploader-info {
+    display: inline;
+}
+
+.details {
+    position: relative;
+}
+
+.channel-details img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    margin: 10px;
+    object-fit: cover;
+}
+
+.channel-details {
+    display: inline;
+    font-size: 1.3rem;
+}
+
+.video-details {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    display: inline;
+}
+
+.likes-dislikes {
+    display: inline;
+}
+
+.likes-dislikes table {
+    margin: 20px;
+}
+
+.likes-dislikes td {
+    text-align: center;
+}
+
+.likes-dislikes td p {
+    margin: 0;
+}
+
+.likes-dislikes img {
+    width: 35px;
+    height: 35px;
+    margin: 10px 20px;
+    cursor: pointer;
+}
+
+.add-comment textarea {
+    width: 100%;
+    margin: 5px 0;
+    background-color: rgb(54, 54, 54);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.add-comment textarea:focus, .add-comment button:hover {
+    border-color: rgb(184, 184, 184);
+    transition: 0.3s;
+}
+
+.add-comment button {
+    margin: 10px 0;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.comment {
+    display: block;
+    position: relative;
+    width: 100%;
+    margin: 20px 0;
+}
+
+.comment td {
+    padding: 5px 10px;
+}
+
+.comment-profile img {
+    margin: 0;
+}
+
+.comment-profile {
+    text-align: center;
+    vertical-align: top;
+}
+
+.comment-date {
+    font-weight: 600;
+    color: rgb(179, 179, 179);
+}
+
+.comment-like-icon-container, .comment-delete-icon-container, .comment-edit-icon-container {
+    display: inline;
+}
+
+.comment-likes-count {
+    font-size: 1.2em;
+    margin: 0 30px 0 20px;
+    display: inline;
+}
+
+.comment-like-icon, .comment-delete-icon, .comment-edit-icon {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.comment-delete-icon {
+    position: absolute;
+    right: 0;
+}
+
+.comment-hr {
+    border-top: 1px solid rgb(94, 94, 94);
+}
+
+.comment-edit-container {
+    display: block;
+    width: 100%;
+}
+
+.comment-edit-container textarea {
+    width: 100%;
+    margin: 5px 0;
+    background-color: rgb(54, 54, 54);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.comment-edit-container button {
+    margin-right: 20px;
+    background-color: rgb(71, 71, 71);
+    padding: 5px;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    border: 1px solid rgb(85, 85, 85);
+    transition: 0.3s;
+}
+
+.comment-edit-container textarea:focus, .comment-edit-container button:hover {
+    border-color: rgb(184, 184, 184);
+    transition: 0.3s;
+}

@@ -20,7 +20,7 @@
         $uploadOk = 0;
     }
 
-    if ($imageFileType != "mp4" && $imageFileType != "mov" && $imageFileType != "mpg" && $imageFileType != "avi") {
+    if ($imageFileType != "mp4" && $imageFileType != "mov") {
         $uploadOk = 0;
     }
 
@@ -30,7 +30,7 @@
         if (isset($description)) {
             $query = "INSERT INTO videos (video_url, title, description, listed, channel_id) VALUES (?,?,?,?,?)";
             $stmt = $pdo->prepare($query);
-            $stmt->execute([$target_file, $title, $description, $visibility, $channelID]);
+            $stmt->execute([$target_file, $title, nl2br($description), $visibility, $channelID]);
         }
         else {
             $query = "INSERT INTO videos (video_url, title, visibility, channel_id) VALUES (?,?,?,?)";

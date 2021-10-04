@@ -1,7 +1,7 @@
 <?php 
     include 'connection.php';
 
-    $userID = $_SESSION['userid'];
+    $userID = $_POST['userid'];
 
     $target_dir = "media/uploads/images/";
     $prefix_name = date("YmdHis") . $userID;
@@ -13,7 +13,7 @@
         $uploadOk = 0;
     }
 
-    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg") {
+    if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif") {
         $uploadOk = 0;
     }
 
