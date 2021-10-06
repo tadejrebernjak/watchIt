@@ -6,6 +6,8 @@
     $videos = $stmt->fetchAll();
 
     foreach ($videos as $video) {
+        $uploadedTimeDifference = getTimeDifference($video['upload_date']);
+
         echo
         "<div class='video-preview'>"
             . "<div class='thumbnail-container'>"
@@ -20,11 +22,11 @@
 
         echo "</a>"
             ."</div>"
-            . "<hr>"
             . "<div class='video-info'>"
                 . "<a href='watch.php?id=" . $video['id'] . "'>"
                 . $video['title']
                 . "</a>"
+                . "<p>" . $uploadedTimeDifference . "</p>"
             . "</div>"
             . "<hr>"
             . "<table class='uploader-info'>"

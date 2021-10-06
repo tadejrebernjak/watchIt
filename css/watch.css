@@ -1,13 +1,13 @@
 .video-container {
     width: 1000px;
-    margin: 10px auto;
+    margin: 40px auto;
     display: block;
 }
 
 .video-container video {
     width: 1000px;
     max-height: 600px;
-    border: 1px solid rgb(131, 131, 131);
+    border: 1px solid rgb(87, 87, 87);
 }
 
 table.uploader-info {
@@ -137,7 +137,7 @@ table.uploader-info {
 }
 
 .comment-hr {
-    border-top: 1px solid rgb(94, 94, 94);
+    border-top: 1px solid rgb(54, 54, 54);
 }
 
 .comment-edit-container {

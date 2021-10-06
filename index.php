@@ -2,6 +2,7 @@
 
 require 'session.php';
 require 'connection.php';
+include 'functions.php';
 
 ?>
 <!DOCTYPE html>

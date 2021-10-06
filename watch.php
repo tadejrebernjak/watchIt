@@ -92,7 +92,7 @@ include 'functions.php';
                                                     echo "<a href='login.php'>"
                                                         . "<img src='media/images/dislike-icon.png' alt='dislike' id='dislike-button' onmouseover='dislikeHover(this)' onmouseout='dislikeHoverRelease(this)'>"
                                                     . "</a>";
-                                                    }
+                                                }
                                             ?>
                                         </div>
                                     </td>
@@ -112,7 +112,14 @@ include 'functions.php';
                 <hr>
                 <div class="description">
                     <h4>Description</h4>
-                    <p><?php echo $video['description']; ?></p>
+                        <?php
+                            if ($video['description'] != "") {
+                                echo "<p>" .  $video['description'] . "</p>";
+                            }
+                            else {
+                                echo "<p class='missing-text'>User was too lazy to write a description...</p>";
+                            } 
+                        ?>
                 </div>
                 <hr>
                 <h4>Comments</h4>

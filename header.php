@@ -20,12 +20,14 @@
                         . "<li>" . "<a href='upload.php'>" . "<img src='media/images/upload-video-icon.png' class='upload-icon'>" . "</a>"
                         . "<li>" . "<a class='username' href='user.php'>" . $user['username'] . "</a>" . "</li>";
 
+                    echo "<li>" . "<a href='channel.php?id=" . $user['channelID'] . "'>";
                     if ($user['profile_picture_url'] == "") {
-                        echo "<li>" . "<img src='media/images/default-pfp.jpg' alt='pfp' class='header-pfp'>" . "</li>";
+                        echo "<img src='media/images/default-pfp.jpg' alt='pfp' class='header-pfp'>";
                     }
                     else {
-                        echo "<li>" . "<img src='" . $user['profile_picture_url'] . "' class='header-pfp'>" . "</li>";
+                        echo "<img src='" . $user['profile_picture_url'] . "' class='header-pfp'>";
                     }
+                    echo "</a></li>";
 
                     echo
                         "<li><a href='logout.php' class='logout'>Logout</a></li>"
