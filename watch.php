@@ -63,10 +63,10 @@ include 'functions.php';
                                             <?php
                                                 if (isset($userID)) {
                                                     if ($videoLiked == false) {
-                                                        echo "<img src='media/images/like-icon.png' alt='like' id='like-button' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCheck(" . $userID . ", " . $videoID . ")'>";
+                                                        echo "<img src='media/images/like-icon.png' alt='like' id='like-button' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCheck(" . $videoID . ")'>";
                                                     }
                                                     else {
-                                                        echo "<img src='media/images/like-icon-checked.png' alt='like' id='like-button' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeUncheck(" . $userID . ", " . $videoID . ")'>";
+                                                        echo "<img src='media/images/like-icon-checked.png' alt='like' id='like-button' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeUncheck(" . $videoID . ")'>";
                                                     }
                                                 }
                                                 else {
@@ -82,10 +82,10 @@ include 'functions.php';
                                             <?php 
                                                 if (isset($userID)) {
                                                     if ($videoDisliked == false) {
-                                                        echo "<img src='media/images/dislike-icon.png' alt='dislike' id='dislike-button' onmouseover='dislikeHover(this)' onmouseout='dislikeHoverRelease(this)' onclick='dislikeCheck(" . $userID . ", " . $videoID . ")'>";
+                                                        echo "<img src='media/images/dislike-icon.png' alt='dislike' id='dislike-button' onmouseover='dislikeHover(this)' onmouseout='dislikeHoverRelease(this)' onclick='dislikeCheck(" . $videoID . ")'>";
                                                     }
                                                     else {
-                                                        echo "<img src='media/images/dislike-icon-checked.png' alt='dislike' id='dislike-button' onmouseover='dislikeCheckedHover(this)' onmouseout='dislikeCheckedHoverRelease(this)' onclick='dislikeUncheck(" . $userID . ", " . $videoID . ")'>";
+                                                        echo "<img src='media/images/dislike-icon-checked.png' alt='dislike' id='dislike-button' onmouseover='dislikeCheckedHover(this)' onmouseout='dislikeCheckedHoverRelease(this)' onclick='dislikeUncheck(" . $videoID . ")'>";
                                                     }
                                                 }
                                                 else {
@@ -127,7 +127,7 @@ include 'functions.php';
                     <?php 
                         if (isset($userID)) {
                             echo "<textarea id='comment-textarea' rows='5' placeholder='Your comment text...'></textarea>"
-                            . "<button id='add-comment-button' onclick='addComment(this, " . $userID . ", " . $videoID . ")'>Add Comment</button>"
+                            . "<button id='add-comment-button' onclick='addComment(this, " . $videoID . ")'>Add Comment</button>"
                             . "<div id='add-comment-response'></div>";
                         }
                     ?>

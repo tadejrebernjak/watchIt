@@ -1,7 +1,8 @@
 <?php 
     include 'connection.php';
+    include 'session.php';
 
-    $userID = $_POST['userid'];
+    $userID = $_SESSION['userID'];
 
     $target_dir = "media/uploads/images/";
     $prefix_name = date("YmdHis") . $userID;

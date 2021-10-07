@@ -1,9 +1,10 @@
 <?php 
     include 'connection.php';
     include 'functions.php';
+    include 'session.php';
 
     $videoID = $_POST['videoid'];
-    $userID = $_POST['userid'];
+    $userID = $_SESSION['userID'];
 
     $sql = "SELECT * FROM video_comments WHERE video_id=? ORDER BY date DESC";
     $stmt = $pdo->prepare($sql);

@@ -1,7 +1,8 @@
 <?php
     include 'connection.php';
+    include 'session.php';
 
-    $userID = $_POST['userid'];
+    $userID = $_SESSION['userID'];
     $commentID = $_POST['commentid'];
 
     $sql = "SELECT * FROM video_comment_likes WHERE (user_id = ?) AND (comment_id = ?)";

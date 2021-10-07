@@ -69,10 +69,10 @@
                     . "<div class='comment-like-icon-container' id='comment-like-icon-container" . $comment['id'] . "'>";
                     if (isset($liked)) {
                         if ($liked == true) {
-                            echo "<img src='media/images/like-icon-checked.png' class='comment-like-icon' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeCommentUncheck(" . $userID . ", " . $comment['id'] . ")'>";
+                            echo "<img src='media/images/like-icon-checked.png' class='comment-like-icon' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeCommentUncheck(" . $comment['id'] . ")'>";
                         }
                         else {
-                            echo "<img src='media/images/like-icon.png' class='comment-like-icon' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCommentCheck(" . $userID . ", " . $comment['id'] . ")'>";
+                            echo "<img src='media/images/like-icon.png' class='comment-like-icon' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCommentCheck(" . $comment['id'] . ")'>";
                         }
                     }
                     else {
@@ -84,12 +84,12 @@
                 if (isset($userID)) {
                     if ($comment['user_id'] == $userID || $videoID == $userID) {
                         echo "<div class='comment-delete-icon-container'>" 
-                                . "<img src='media/images/delete-icon.png' class='comment-delete-icon' alt='delete' onmouseover='deleteHover(this)' onmouseout='deleteHoverRelease(this)' onclick='deleteComment(" . $comment['id'] . ", " . $videoID . ", " . $userID . ")'>"
+                                . "<img src='media/images/delete-icon.png' class='comment-delete-icon' alt='delete' onmouseover='deleteHover(this)' onmouseout='deleteHoverRelease(this)' onclick='deleteComment(" . $comment['id'] . ", " . $videoID . ")'>"
                             . "</div>";
                     }
                     if ($comment['user_id'] == $userID) {
                         echo "<div class='comment-edit-icon-container'>" 
-                                . "<img src='media/images/edit-icon.png' class='comment-edit-icon' alt='delete' onmouseover='editHover(this)' onmouseout='editHoverRelease(this)' onclick='editCommentShow(" . $comment['id'] . ", " . $videoID . ", " . $userID . ")'>"
+                                . "<img src='media/images/edit-icon.png' class='comment-edit-icon' alt='delete' onmouseover='editHover(this)' onmouseout='editHoverRelease(this)' onclick='editCommentShow(" . $comment['id'] . ", " . $videoID . ")'>"
                             . "</div>";
                     }
                 }

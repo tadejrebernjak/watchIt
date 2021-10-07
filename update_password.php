@@ -1,9 +1,10 @@
 <?php 
     include 'connection.php';
+    include 'session.php';
 
     $currentPassword = $_POST['password'];
     $newPassword = $_POST['newpassword'];
-    $userID = $_POST['userid'];
+    $userID = $_SESSION['userID'];
 
     $sql = "SELECT password FROM users WHERE id=?";
     $stmt = $pdo->prepare($sql);

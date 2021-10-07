@@ -1,8 +1,9 @@
 <?php 
     include 'connection.php';
+    include 'session.php';
 
     $username = $_POST['username'];
-    $userID = $_POST['userid'];
+    $userID = $_SESSION['userID'];
 
     $sql =  "UPDATE users SET username=? WHERE id=?";
     $stmt = $pdo->prepare($sql);

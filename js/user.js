@@ -3,7 +3,6 @@ document.getElementById("password-change-button").addEventListener("click", pass
 
 function usernameUpdate() {
     let username = document.getElementById("username-change").value;
-    let userid = document.getElementById("user-id").value;
     let response = document.getElementById("username-response");
 
     if (username == "") {
@@ -13,7 +12,7 @@ function usernameUpdate() {
         let xhttp = new XMLHttpRequest();
         xhttp.open("POST", "update_username.php");
         xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(`userid=${userid}&username=${username}`);
+        xhttp.send(`username=${username}`);
 
         xhttp.onload = function() {
             if (this.responseText != 1) {
@@ -30,7 +29,6 @@ function passwordUpdate() {
     let currentPassword = document.getElementById("current-password").value;
     let newPassword = document.getElementById("new-password").value;
     let newPasswordCheck = document.getElementById("new-password-repeat").value;
-    let userid = document.getElementById("user-id").value;
     let response = document.getElementById("password-response");
 
     if (currentPassword == "" || newPassword == "" || newPasswordCheck == "") {
@@ -44,7 +42,7 @@ function passwordUpdate() {
             let xhttp = new XMLHttpRequest();
             xhttp.open("POST", "update_password.php");
             xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.send(`userid=${userid}&newpassword=${newPassword}&password=${currentPassword}`);
+            xhttp.send(`newpassword=${newPassword}&password=${currentPassword}`);
 
             xhttp.onload = function() {
                 if (this.responseText != 1) {
@@ -52,6 +50,10 @@ function passwordUpdate() {
                 }
                 else {
                     response.innerHTML = "Password has been changed";
+
+                    document.getElementById("current-password").value = "";
+                    document.getElementById("new-password").value = "";
+                    document.getElementById("new-password-repeat").value = "";
                 }
             }
         }

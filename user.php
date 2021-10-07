@@ -24,7 +24,6 @@ if (!isset($_SESSION['userID']))
         <?php require 'searchbar.php' ?>
         <div class="inner-content">
             <div class="left">
-                <input type="hidden" id="user-id" value="<?php echo $_SESSION['userID'] ?>"></input>
                 <div class="field">
                     <h3>Change Username</h3>
                     <input type="text" id="username-change" placeholder="Enter New Username"></input>
@@ -44,7 +43,6 @@ if (!isset($_SESSION['userID']))
                 <div class="field">
                     <h3>Change Profile Picture</h3>
                     <form action="update_pfp.php" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="userid" value="<?php echo $_SESSION['userID'] ?>">
                         <input type="file" name="pfp" id="pfp-file">
                         <input type="submit" value="Confirm">
                         <div id="pfp-response">
