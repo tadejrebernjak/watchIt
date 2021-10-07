@@ -3,6 +3,17 @@ document.getElementById("recent-arrow-left").addEventListener("click", (evt) => 
 document.getElementById("popular-arrow-right").addEventListener("click", (evt) => recentScrollRight("popular"));
 document.getElementById("popular-arrow-left").addEventListener("click", (evt) => recentScrollLeft("popular"));
 
+let subButtonExists = !!document.getElementById("sub-button");
+let unsubButtonExists = !!document.getElementById("unsub-button");
+
+if (subButtonExists) {
+    document.getElementById("sub-button").addEventListener("click", subscribe);
+}
+
+if (unsubButtonExists) {
+    document.getElementById("unsub-button").addEventListener("click", unsubscribe);
+}
+
 window.onload = checkArrows;
 
 var checkingArrows;
@@ -112,4 +123,32 @@ function changeTab(button, page)
 	}
 
     button.classList.add("active");
+}
+
+function subscribe() {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let channelid = url.searchParams.get("id");
+
+    let xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "insert_subscription.php");
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(`channelid=${channelid}`);
+    xhttp.onload = function() {
+        window.location.reload();
+	}
+}
+
+function unsubscribe() {
+    let url_string = window.location.href;
+    let url = new URL(url_string);
+    let channelid = url.searchParams.get("id");
+
+    let xhttp = new XMLHttpRequest();
+	xhttp.open("POST", "delete_subscription.php");
+	xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	xhttp.send(`channelid=${channelid}`);
+    xhttp.onload = function() {
+        window.location.reload();
+	}
 }

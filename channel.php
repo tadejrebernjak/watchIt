@@ -54,25 +54,27 @@ include 'select_channel.php';
                             </tr>
                         </table>
                     </div>
-                    <?php 
-                        if (isset($_SESSION['userID'])) {
-                            if ($_SESSION['userID'] != $channeluser['id']) {
-                                include 'check_subscription.php';
+                    <div id="sub-container">
+                        <?php 
+                            if (isset($_SESSION['userID'])) {
+                                if ($_SESSION['userID'] != $channeluser['id']) {
+                                    include 'check_subscription.php';
 
-                                if ($subbed == true) {
-                                    echo "<button class='unsub-button' onclick='unsubscribe(" . $_SESSION['userID'] . ", " . $channel['id'] . "'>Subscribed</button>";
-                                }
-                                else {
-                                    echo "<button class='sub-button' onclick='subscribe(" . $_SESSION['userID'] . ", " . $channel['id'] . "'>Subscribe</button>";
+                                    if ($subbed == true) {
+                                        echo "<button class='unsub-button' id='unsub-button'>Subscribed</button>";
+                                    }
+                                    else {
+                                        echo "<button class='sub-button' id='sub-button'>Subscribe</button>";
+                                    }
                                 }
                             }
-                        }
-                        else {
-                            echo "<a href='login.php'>"
-                            . "<button class='sub-button'>Subscribe</button>"
-                            . "</a>";
-                        }
-                    ?>
+                            else {
+                                echo "<a href='login.php'>"
+                                . "<button class='sub-button'>Subscribe</button>"
+                                . "</a>";
+                            }
+                        ?>
+                    </div>
                 </div>
                 <div class="nav">
                     <div class="tabs-centered">

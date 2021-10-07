@@ -6,9 +6,9 @@
     display: inline;
     background-color: rgb(44, 44, 44);
     padding: 24px;
-    border-left: 1px solid rgb(131, 131, 131);
-    border-bottom: 1px solid rgb(131, 131, 131);
-    border-right: 1px solid rgb(131, 131, 131);
+    border-left: 1px solid rgb(78, 78, 78);
+    border-bottom: 1px solid rgb(78, 78, 78);
+    border-right: 1px solid rgb(78, 78, 78);
 }
 
 .search-bar input {
