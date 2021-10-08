@@ -10,7 +10,7 @@ body {
 
 .content {
     position: relative;
-    padding: 0 40px 40px 40px;
+    padding: 40px;
     width: 70%;
     min-width: 1000px;
     padding-bottom: 20px;
@@ -37,9 +37,12 @@ h2 {
 }
 
 .video-list {
+    margin: 20px 0 100px 0;
+    background-color: rgb(22, 22, 22);
+    border-radius: 10px;
+    padding: 10px;
     display: flex;
     flex-wrap: wrap;
-    margin: 40px 0;
 }
 
 .video-preview {

@@ -18,10 +18,20 @@ include 'functions.php';
 <body>
     <?php require 'header.php' ?>
     <div class="content">
-        <?php require 'searchbar.php' ?>
         <div class="inner-content">
+            <h2>Most popular uploads</h2>
             <div class="video-list">
-                <?php include 'select_videos.php' ?>
+                <?php 
+                    $order = "popular";
+                    include 'select_videos.php'; 
+                ?>
+            </div>
+            <h2>Newest uploads</h2>
+            <div class="video-list">
+                <?php 
+                    $order = "recent";
+                    include 'select_videos.php'; 
+                ?>
             </div>
         </div>
     </div>

@@ -21,7 +21,6 @@ include 'select_channel.php';
 <body>
     <?php require 'header.php' ?>
     <div class="content">
-        <?php require 'searchbar.php' ?>
         <div class="inner-content">
             <div class="channel-banner-container">
                 <?php

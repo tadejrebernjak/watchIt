@@ -20,7 +20,6 @@ include 'functions.php';
 <body>
     <?php require 'header.php' ?>
     <div class="content">
-        <?php require 'searchbar.php' ?>
         <div class="inner-content">
             <div class="video-container">
                 <h3><?php echo $video['title'] ?></h3>

@@ -4,7 +4,7 @@
     WHERE (listed = ?) AND (channel_id = ?) 
     ORDER BY views DESC";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([1, $channel['id']]);
+    $stmt->execute([1, $channeluser['id']]);
 
     $videos = $stmt->fetchAll();
 

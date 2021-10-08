@@ -1,7 +1,7 @@
 <?php 
     $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp FROM videos v INNER JOIN channels c ON c.id=v.channel_id INNER JOIN users u ON u.id=c.user_id WHERE (listed = ?) AND (channel_id = ?) ORDER BY upload_date DESC";
     $stmt = $pdo->prepare($sql);
-    $stmt->execute([1, $channel['id']]);
+    $stmt->execute([1, $channeluser['id']]);
 
     $videos = $stmt->fetchAll();
 

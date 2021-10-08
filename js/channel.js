@@ -14,7 +14,10 @@ if (unsubButtonExists) {
     document.getElementById("unsub-button").addEventListener("click", unsubscribe);
 }
 
-window.onload = checkArrows;
+window.onload = function() {
+    document.getElementById("search-button").addEventListener("click", search);
+    checkArrows;
+} 
 
 var checkingArrows;
 window.onresize = function(){

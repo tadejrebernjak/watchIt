@@ -1,5 +1,18 @@
 <?php 
-    $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp FROM videos v INNER JOIN channels c ON c.id=v.channel_id INNER JOIN users u ON u.id=c.user_id WHERE (listed = 1) ORDER BY views DESC";
+    if ($order == "popular") {
+        $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp 
+        FROM videos v INNER JOIN channels c ON c.id=v.channel_id 
+        INNER JOIN users u ON u.id=c.user_id 
+        WHERE (listed = 1) 
+        ORDER BY views DESC";
+    }
+    else if ($order == "recent") {
+        $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp 
+        FROM videos v INNER JOIN channels c ON c.id=v.channel_id 
+        INNER JOIN users u ON u.id=c.user_id 
+        WHERE (listed = 1) 
+        ORDER BY upload_date DESC";
+    }
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
 

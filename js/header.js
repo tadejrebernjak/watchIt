@@ -1,9 +1,5 @@
-function uploadHover(icon) {
-    icon.src = "media/images/upload-video-icon-hover.png";
-}
-
-function uploadHoverRelease(icon) {
-    icon.src = "media/images/upload-video-icon.png";
+window.onload = function() {
+    document.getElementById("search-button").addEventListener("click", search);
 }
 
 function menuHover(icon) {
@@ -12,4 +8,13 @@ function menuHover(icon) {
 
 function menuHoverRelease(icon) {
     icon.src = "media/images/menu.png";
+}
+
+function search() {
+    let query = document.getElementById("search-text").value;
+
+    if (query != "") {
+        let url = "search.php?q=" + query + "&t=all";
+        window.location.replace(url);
+    }
 }

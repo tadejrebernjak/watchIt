@@ -21,7 +21,6 @@ if (!isset($_SESSION['userID']))
 <body>
     <?php require 'header.php' ?>
     <div class="content">
-        <?php require 'searchbar.php' ?>
         <div class="inner-content">
             <h2>Video Upload</h2>
             <div class="upload-form">
