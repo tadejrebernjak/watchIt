@@ -10,6 +10,7 @@ function confirm() {
     removeButton.addEventListener("click", deleteVideo);
     t = setTimeout(() => {
         removeButton.innerHTML = "Remove video";
+        removeButton.removeEventListener("click", deleteVideo);
         removeButton.addEventListener("click", confirm);
     }, 5000);
 }
@@ -26,6 +27,5 @@ function deleteVideo() {
 
     xhttp.onload = function() {
         window.history.back();
-        window.location.replace("index.php");
     }
 }

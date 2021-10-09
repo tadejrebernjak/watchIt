@@ -139,11 +139,7 @@ include 'functions.php';
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="footer-content">
-
-        </div>
-    </div>
+    <?php include 'footer.php'; ?>
     <script src="js/watch.js"></script>
 </body>
 </html>

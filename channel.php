@@ -233,18 +233,14 @@ include 'functions.php';
                     ?>
                     <hr>
                     <?php
-                        echo "<p>User joined on: " . date('d/m/Y' , strtotime($user['creation_date'])) . "</p>";
+                        echo "<p>User joined on: " . date('d/m/Y' , strtotime($channeluser['creation_date'])) . "</p>";
                         echo "<p>Channel visits: " . $views . "</p>";
                     ?>
                 </div>
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="footer-content">
-
-        </div>
-    </div>
+    <?php include 'footer.php'; ?>
     <script src="js/channel.js"></script>
 </body>
 </html>

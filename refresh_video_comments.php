@@ -12,6 +12,9 @@
 
     $comments = $stmt->fetchAll();
 
+    $length = count($comments);
+    $i = 0;
+
     foreach ($comments as $comment) {
         $sql = "SELECT u.*, c.id AS channelID FROM users u INNER JOIN video_comments vc ON u.id=vc.user_id INNER JOIN channels c ON u.id=c.user_id WHERE vc.id=?";
         $stmt = $pdo->prepare($sql);
@@ -58,10 +61,10 @@
                     else {
                         echo "<img src='media/images/default-pfp.jpg' alt='pfp' class='uploader-pfp'>";
                     }
-                echo "</a>" . "<br>"
-                . "<a href='channel.php?id=" . $poster['channelID'] . "'>" . $poster['username'] . "</a>" . "<br>"
+                echo "</a>"
                 . "</td>"
                 . "<td class='comment-date'>"
+                    . "<a href='channel.php?id=" . $poster['channelID'] . "'>" . $poster['username'] . "</a>"
                     . $uploadedTimeDifference;
                     if ($comment['edited'] == 1) {
                         echo " (edited " . date('d/m/Y' , strtotime($comment['edit_date'])) . ")";
@@ -76,10 +79,10 @@
                     . "<div class='comment-like-icon-container' id='comment-like-icon-container" . $comment['id'] . "'>";
                     if (isset($liked)) {
                         if ($liked == true) {
-                            echo "<img src='media/images/like-icon-checked.png' class='comment-like-icon' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeCommentUncheck(" . $userID . ", " . $comment['id'] . ")'>";
+                            echo "<img src='media/images/like-icon-checked.png' class='comment-like-icon' onmouseover='likeCheckedHover(this)' onmouseout='likeCheckedHoverRelease(this)' onclick='likeCommentUncheck(" . $comment['id'] . ")'>";
                         }
                         else {
-                            echo "<img src='media/images/like-icon.png' class='comment-like-icon' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCommentCheck(" . $userID . ", " . $comment['id'] . ")'>";
+                            echo "<img src='media/images/like-icon.png' class='comment-like-icon' onmouseover='likeHover(this)' onmouseout='likeHoverRelease(this)' onclick='likeCommentCheck(" . $comment['id'] . ")'>";
                         }
                     }
                     else {
@@ -91,12 +94,12 @@
                 if (isset($userID)) {
                     if ($comment['user_id'] == $userID || $videoID == $userID) {
                         echo "<div class='comment-delete-icon-container'>" 
-                                . "<img src='media/images/delete-icon.png' class='comment-delete-icon' alt='delete' onmouseover='deleteHover(this)' onmouseout='deleteHoverRelease(this)' onclick='deleteComment(" . $comment['id'] . ", " . $videoID . ", " . $userID . ")'>"
+                                . "<img src='media/images/delete-icon.png' class='comment-delete-icon' alt='delete' onmouseover='deleteHover(this)' onmouseout='deleteHoverRelease(this)' onclick='deleteComment(" . $comment['id'] . ", " . $videoID . ")'>"
                             . "</div>";
                     }
                     if ($comment['user_id'] == $userID) {
                         echo "<div class='comment-edit-icon-container'>" 
-                                . "<img src='media/images/edit-icon.png' class='comment-edit-icon' alt='delete' onmouseover='editHover(this)' onmouseout='editHoverRelease(this)' onclick='editCommentShow(" . $comment['id'] . ", " . $videoID . ", " . $userID . ")'>"
+                                . "<img src='media/images/edit-icon.png' class='comment-edit-icon' alt='delete' onmouseover='editHover(this)' onmouseout='editHoverRelease(this)' onclick='editCommentShow(" . $comment['id'] . ", " . $videoID . ")'>"
                             . "</div>";
                     }
                 }
@@ -108,7 +111,10 @@
                 . "</td>"
             . "</tr>"
         . "</table>"
-        . "</div>"
-        . "<hr class='comment-hr'>";
+        . "</div>";
+
+        if (++$i != $length) {
+            echo "<hr class='comment-hr'>";
+        }
     }
 ?>

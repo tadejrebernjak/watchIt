@@ -39,11 +39,7 @@ if (isset($_SESSION['userID']))
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="footer-content">
-
-        </div>
-    </div>
+    <?php include 'footer.php'; ?>
     <script src="js/register.js"></script>
 </body>
 </html>

@@ -18,6 +18,16 @@ if ($queryType != "all" && $queryType != "videos" && $queryType != "channels" &&
     header("Location:search.php?q=$query&t=all");
 }
 
+if (!isset($_GET['s'])) {
+    header("Location:search.php?q=$query&t=$queryType&s=popular");
+}
+
+$sort = $_GET['s'];
+
+if ($sort != "popular" && $sort != "recent") {
+    header("Location:search.php?q=$query&t=$queryType&s=popular");
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -40,6 +50,10 @@ if ($queryType != "all" && $queryType != "videos" && $queryType != "channels" &&
                         <a href="search.php?q=<?php echo $query ?>&t=videos"><button class="tabs" id="videos-button">Videos</button></a>
                         <a href="search.php?q=<?php echo $query ?>&t=channels"><button class="tabs" id="channels-button">Channels</button></a>
                         <a href="search.php?q=<?php echo $query ?>&t=uploaders"><button class="tabs" id="uploaders-button">Uploaders</button></a>
+                    </div>
+                    <div class="tabs-centered">
+                        <a href="search.php?q=<?php echo $query ?>&t=<?php echo $queryType ?>&s=popular"><button class="tabs tabs-two" id="popular-button">popular</button></a>
+                        <a href="search.php?q=<?php echo $query ?>&t=<?php echo $queryType ?>&s=recent"><button class="tabs tabs-two" id="recent-button">recent</button></a>
                     </div>
                 </div>
             <?php
@@ -196,11 +210,7 @@ if ($queryType != "all" && $queryType != "videos" && $queryType != "channels" &&
             </div>
         </div>
     </div>
-    <div class="footer">
-        <div class="footer-content">
-
-        </div>
-    </div>
+    <?php include 'footer.php'; ?>
     <script src="js/search.js"></script>
 </body>
 </html>

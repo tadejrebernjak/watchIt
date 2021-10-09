@@ -51,7 +51,7 @@
                         echo "<p>(hidden)</p>";
                     }
                     echo "<a href='edit.php?id=" . $video['id'] . "'>"
-                    . "<i class='fas fa-pen edit-video'></i>"
+                    . "<i class='fas fa-edit edit-video'></i>"
                     . "</a>";
                 }
             echo "</div>"

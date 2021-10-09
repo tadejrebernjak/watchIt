@@ -41,7 +41,7 @@ if ($_SESSION['userID'] != $video['userid'])
                                 }
                             ?></textarea>
                     <h3>Visibility</h3>
-                    <select name="visibility" id="visibility">
+                    <select name="listed" id="listed">
                         <?php
                             if ($video['listed'] === 1) {
                                 echo "<option value='1' selected='selected'>Visible</option>"
@@ -56,7 +56,7 @@ if ($_SESSION['userID'] != $video['userid'])
                     <h3>Thumbnail image</h3>
                     <div class="thumbnail-preview">
                         <?php
-                            if (isset($video['thumbnail'])) {
+                            if (isset($video['thumbnail']) && $video['thumbnail'] != "") {
                                 echo "<img src='" . $video['thumbnail'] . "' id='thumbnail'>";
                             }
                             else {
@@ -72,11 +72,7 @@ if ($_SESSION['userID'] != $video['userid'])
             <button class="remove-button" id="remove-button">DELETE VIDEO</button>
         </div> 
     </div>
-    <div class="footer">
-        <div class="footer-content">
-
-        </div>
-    </div>
+    <?php include 'footer.php'; ?>
     <script src="js/user.js"></script>
     <script src="js/edit.js"></script>
     <script src="js/thumbnail_preview.js"></script>

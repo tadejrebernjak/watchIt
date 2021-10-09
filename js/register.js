@@ -3,6 +3,7 @@ document.getElementById("register-button").addEventListener("click", registerSub
 function registerSubmit() {
     let email = document.getElementById("email").value;
     let username = document.getElementById("username").value;
+    let usernameLength = username.length;
     let password = document.getElementById("password").value;
     let passwordRepeat = document.getElementById("password-repeat").value;
     let response = document.getElementById("response");
@@ -14,20 +15,25 @@ function registerSubmit() {
             response.innerHTML = "<p class='error-text'>Email is not in the correct format</p>";
         }
         else {
-            if (password != passwordRepeat) {
-                response.innerHTML = "<p class='error-text'>Passwords do not match</p>";
+            if (usernameLength > 15) {
+                response.innerHTML = "<p class='error-text'>Maximum username length is 15 characters</p>";
             }
             else {
-                let xhttp = new XMLHttpRequest();
-                xhttp.open("POST", "register_account.php");
-                xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhttp.send(`email=${email}&username=${username}&password=${password}`);
-                xhttp.onload = function() {
-                    if (this.responseText != 1) {
-                        response.innerHTML = this.responseText;
-                    }
-                    else {
-                        window.location.href = 'login.php';
+                if (password != passwordRepeat) {
+                    response.innerHTML = "<p class='error-text'>Passwords do not match</p>";
+                }
+                else {
+                    let xhttp = new XMLHttpRequest();
+                    xhttp.open("POST", "register_account.php");
+                    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhttp.send(`email=${email}&username=${username}&password=${password}`);
+                    xhttp.onload = function() {
+                        if (this.responseText != 1) {
+                            response.innerHTML = this.responseText;
+                        }
+                        else {
+                            window.location.href = 'login.php';
+                        }
                     }
                 }
             }

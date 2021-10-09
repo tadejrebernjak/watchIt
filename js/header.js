@@ -14,7 +14,7 @@ function search() {
     let query = document.getElementById("search-text").value;
 
     if (query != "") {
-        let url = "search.php?q=" + query + "&t=all";
+        let url = "search.php?q=" + query + "&t=all&s=popular";
         window.location.replace(url);
     }
 }

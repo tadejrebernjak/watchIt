@@ -5,6 +5,7 @@ document.getElementById("description-change-button").addEventListener("click", d
 function usernameUpdate() {
     let usernameField = document.getElementById("username-change");
     let username = usernameField.value;
+    let usernameLength = username.length;
     let response = document.getElementById("username-response");
 
     if (username == "") {
@@ -17,17 +18,28 @@ function usernameUpdate() {
         }, 3000);
     }
     else {
-        let xhttp = new XMLHttpRequest();
-        xhttp.open("POST", "update_username.php");
-        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-        xhttp.send(`username=${username}`);
+        if (usernameLength > 15) {
+            response.innerHTML = "<p class='error-text align-left'>Maximum username length is 15 characters</p>";
+            usernameField.style.border = "1px solid rgb(221, 18, 18)";
 
-        xhttp.onload = function() {
-            if (this.responseText != 1) {
-                response.innerHTML = this.responseText;
-            }
-            else {
-                window.location.reload();
+            setTimeout(function() {
+                response.innerHTML = "";
+                usernameField.style.border = "1px solid rgb(201, 201, 201)";
+            }, 3000);
+        }
+        else {
+            let xhttp = new XMLHttpRequest();
+            xhttp.open("POST", "update_username.php");
+            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+            xhttp.send(`username=${username}`);
+    
+            xhttp.onload = function() {
+                if (this.responseText != 1) {
+                    response.innerHTML = this.responseText;
+                }
+                else {
+                    window.location.reload();
+                }
             }
         }
     }

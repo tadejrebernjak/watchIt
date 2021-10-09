@@ -1,4 +1,8 @@
 <?php
+    if ($sort == "recent") {
+        $sql = str_replace("ORDER BY views DESC", "ORDER BY upload_date DESC", $sql);
+    }
+
     $stmt = $pdo->prepare($sql);
     if ($params == 1) {
         $stmt->execute([1, $thisQuery]);
@@ -29,7 +33,7 @@
         . "<a href='watch.php?id=" . $video['id'] . "'>"
         . "<div class='result-thumbnail-container'>";
         
-        if (isset($video['thumbnail'])) {           
+        if (isset($video['thumbnail']) && $video['thumbnail'] != "") {           
             echo "<img src='" . $video['thumbnail'] . "' class='result-thumbnail'>";
         }
         else {

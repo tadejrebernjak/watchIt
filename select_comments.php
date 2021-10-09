@@ -5,6 +5,9 @@
 
     $comments = $stmt->fetchAll();
 
+    $length = count($comments);
+    $i = 0;
+
     foreach ($comments as $comment) {
         $sql = "SELECT u.*, c.id AS channelID FROM users u INNER JOIN video_comments vc ON u.id=vc.user_id INNER JOIN channels c ON u.id=c.user_id WHERE vc.id=?";
         $stmt = $pdo->prepare($sql);
@@ -51,10 +54,10 @@
                     else {
                         echo "<img src='media/images/default-pfp.jpg' alt='pfp' class='uploader-pfp'>";
                     }
-                echo "</a>" . "<br>"
-                . "<a href='channel.php?id=" . $poster['channelID'] . "'>" . $poster['username'] . "</a>" . "<br>"
+                echo "</a>"
                 . "</td>"
                 . "<td class='comment-date'>"
+                    . "<a href='channel.php?id=" . $poster['channelID'] . "'>" . $poster['username'] . "</a>"
                     . $uploadedTimeDifference;
                     if ($comment['edited'] == 1) {
                         echo " (edited " . date('d/m/Y' , strtotime($comment['edit_date'])) . ")";
@@ -101,7 +104,10 @@
                 . "</td>"
             . "</tr>"
         . "</table>"
-        . "</div>"
-        . "<hr class='comment-hr'>";
+        . "</div>";
+
+        if (++$i != $length) {
+            echo "<hr class='comment-hr'>";
+        }
     }
 ?>
