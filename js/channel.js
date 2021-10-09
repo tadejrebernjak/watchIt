@@ -16,7 +16,7 @@ if (unsubButtonExists) {
 
 window.onload = function() {
     document.getElementById("search-button").addEventListener("click", search);
-    checkArrows;
+    checkArrows();
 } 
 
 var checkingArrows;

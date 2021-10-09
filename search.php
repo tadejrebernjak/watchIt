@@ -109,6 +109,21 @@ if ($queryType != "all" && $queryType != "videos" && $queryType != "channels" &&
                         WHERE (listed = ?) AND (LOWER(username) != ?) AND (LOWER(v.description) LIKE ?) AND (LOWER(title) NOT LIKE ?)
                         ORDER BY views DESC";
                         include "search_videos.php";
+
+                        if ($noresults == true) {
+                            //videos by channel with similar username as query
+
+                            $thisQuery = "%$query%";
+                            $thisQueryExact = $query;
+                            $params = 2;
+
+                            $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp 
+                            FROM videos v INNER JOIN channels c ON c.id=v.channel_id 
+                            INNER JOIN users u ON u.id=c.user_id 
+                            WHERE (listed = ?) AND (LOWER(username) != ?) AND (LOWER(username) LIKE ?)
+                            ORDER BY views DESC";
+                            include 'search_videos.php';
+                        }
                     }
                     else if ($queryType == "videos") {
                         //videos with same or similar title as query

@@ -11,8 +11,8 @@ body {
 .content {
     position: relative;
     padding: 40px;
-    width: 70%;
-    min-width: 1000px;
+    width: 80%;
+    max-width: 1310px;
     padding-bottom: 20px;
     margin: auto;
     background:rgb(27, 27, 27)
@@ -30,9 +30,18 @@ h2 {
 }
 
 .error-text {
-    margin: 20px;
+    margin-top: 20px;
+    margin-bottom: 0;
     font-size: 20px;
     color: rgb(221, 18, 18);
+    text-align: center;
+}
+
+.success-text {
+    margin-top: 20px;
+    margin-bottom: 0;
+    font-size: 20px;
+    color: rgb(15, 152, 206);
     text-align: center;
 }
 
@@ -91,4 +100,9 @@ hr {
 .missing-text {
     color: rgb(119, 119, 119);
     font-size: 1.3em;
+}
+
+.align-left {
+    text-align: left;
+    margin-bottom: 10px;
 }

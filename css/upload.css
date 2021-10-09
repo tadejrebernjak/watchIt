@@ -1,9 +1,10 @@
 .upload-form {
-    width: 70%;
+    width: 90%;
+    max-width: 900px;
     padding: 30px;
     margin:  30px auto;
-    border: 1px solid rgb(131, 131, 131);
-    border-radius: 5px;
+    background: rgb(22, 22, 22);
+    border-radius: 20px;
 }
 
 .upload-form * {
@@ -12,7 +13,7 @@
 
 .upload-form input {
     margin: 20px 0;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(29, 29, 29);
     padding: 5px;
     border: none;
     border-radius: 4px;
@@ -24,7 +25,7 @@
 textarea {
     width: 100%;
     margin: 20px 0;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(29, 29, 29);
     padding: 5px;
     border: none;
     border-radius: 4px;
@@ -35,7 +36,7 @@ textarea {
 
 .upload-form select {
     margin: 20px 0;
-    background-color: rgb(71, 71, 71);
+    background-color: rgb(29, 29, 29);
     padding: 5px;
     border: none;
     border-radius: 4px;
@@ -61,5 +62,31 @@ textarea {
 
 .upload-form input[type=submit]:hover {
     border-color: rgb(184, 184, 184);
+    transition: 0.3s;
+}
+
+.thumbnail-preview img {
+    width: 450px;
+    max-height: 250px;
+}
+
+.remove-button {
+    padding: 10px 20px;
+    font-size: 1.25em;
+    display: block;
+    margin: auto;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid rgb(206, 15, 15);
+    border-radius: 5px;
+    color: rgb(206, 15, 15);
+    outline: none;
+    transition: 0.3s;
+}
+
+.remove-button:hover {
+    background-color: rgb(206, 15, 15);
+    color: rgb(218, 218, 218);
     transition: 0.3s;
 }

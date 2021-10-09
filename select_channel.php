@@ -8,7 +8,7 @@
 
     $channeluser = $stmt->fetch();
 
-    $sql = "SELECT * FROM channels WHERE user_id=?";
+    $sql = "SELECT *, banner_picture_url AS banner FROM channels WHERE user_id=?";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$userID]);
 

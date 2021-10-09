@@ -22,6 +22,6 @@
         echo "1";
     }
     else {
-        echo "Incorrect password";
+        echo "<p class='error-text align-left'>Incorrect password</p>   ";
     }
 ?>

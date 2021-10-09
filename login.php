@@ -21,7 +21,7 @@ if (isset($_SESSION['userID']))
 <body>
     <?php require 'header.php' ?>
     <div class="content">
-        <h2>Login</h2>
+        <h2>SIGN IN</h2>
         <div class="form">
             <div class="form-inner">
                 <p>Email</p>
@@ -29,7 +29,8 @@ if (isset($_SESSION['userID']))
                 <p>Password</p>
                 <input type="password" id="password" placeholder="Enter Password">
                 <button id="login-button">Sign In</button>
-                <a href="register.php">Create Account</a>
+                <p class="or">OR</p>
+                <a href="register.php"><button id='other-button'>Sign up</button></a>
                 <div id="response"></div>
             </div>
         </div>

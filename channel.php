@@ -4,12 +4,39 @@ require 'session.php';
 require 'connection.php';
 include 'functions.php';
 
-include 'select_channel.php';
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+    include 'select_channel.php';
+    $channelDescription = $channel['description'];
+    if (isset($channel['banner'])) {
+        echo "<style>"
+            . ".bar {
+                position: relative;
+                z-index: 1;
+                padding: 20px; 
+            }"
+
+            . ".bar::before {
+                content: ' ';
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%; 
+                height: 100%;  
+                opacity: .4; 
+                z-index: -1;
+                background: url(" . $channel['banner'] . ");
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                border-radius: 10px;
+            }"
+        . "</style";
+    }
+?>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,13 +49,6 @@ include 'select_channel.php';
     <?php require 'header.php' ?>
     <div class="content">
         <div class="inner-content">
-            <div class="channel-banner-container">
-                <?php
-                    if (isset($channel['banner_picture_url'])) {
-                        echo "<img src='" . $channel['banner_picture_url'] . "' alt='banner'>";
-                    }
-                ?>
-            </div>
             <div class="top">
                 <div class="bar">
                     <div class="channel-details">
@@ -65,6 +85,9 @@ include 'select_channel.php';
                                     else {
                                         echo "<button class='sub-button' id='sub-button'>Subscribe</button>";
                                     }
+                                }
+                                else {
+                                    echo "<a href='user.php?id=" . $_SESSION['userID'] . "'><button class='unsub-button'>Customize</button></a>";
                                 }
                             }
                             else {
@@ -201,8 +224,8 @@ include 'select_channel.php';
                 <div class="about-info">
                     <h3>Channel description</h3>
                     <?php 
-                        if (isset($channel['description'])) {
-                            echo "<p>" . $channel['description'] . "</p>";
+                        if (isset($channelDescription) && $channelDescription != "") {
+                            echo "<p>" . $channelDescription . "</p>";
                         }
                         else {
                             echo "<p class='missing-text'>" . "Oops, this user has yet to write a description :(" . "</p>";

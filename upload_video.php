@@ -62,6 +62,9 @@
                 $stmt = $pdo->prepare($query);
                 $stmt->execute([$target_file, $videoID]);
             }
+            else {
+                header("Location: edit.php?id=" . $videoID . "&uploaderror=thumbnail");
+            }
         }
 
         header("Location: index.php");

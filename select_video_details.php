@@ -1,13 +1,17 @@
 <?php
     $videoID = $_GET['id'];
 
-    $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp, c.subscribers AS subscribers FROM videos v INNER JOIN channels c ON c.id=v.channel_id INNER JOIN users u ON u.id=c.user_id WHERE (v.id = ?)";
+    $sql = "SELECT v.*, c.id AS channelID, u.username AS username, u.profile_picture_url AS pfp, c.subscribers AS subscribers, u.id AS userid 
+    FROM videos v INNER JOIN channels c ON c.id=v.channel_id 
+    INNER JOIN users u ON u.id=c.user_id 
+    WHERE (v.id = ?)";
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$videoID]);
 
     $video = $stmt->fetch();
 
-    $views = addView($pdo, $videoID, (int)$video['views']);
+    if (!isset($editing))
+        $views = addView($pdo, $videoID, (int)$video['views']);
 
     function addView($pdo, $videoID, $views) {
         $views++;

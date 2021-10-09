@@ -17,13 +17,13 @@
     border: none;
     border-radius: 10px;
     outline: none;
-    border: 1px solid rgb(122, 122, 122);
+    border: 1px solid rgb(155, 155, 155);
     transition: 0.3s;
 }
 
 .search-bar input:focus {
     border: none;
-    border: 1px solid rgb(184, 184, 184);
+    border: 1px solid rgb(201, 201, 201);
     width: 400px;
     transition: 0.3s;
 }
@@ -31,7 +31,7 @@
 .search-bar button {
     background: rgb(44, 44, 44);
     width: 75px;
-    border: 1px solid rgb(122, 122, 122);
+    border: 1px solid rgb(155, 155, 155);
     border-radius: 10px;
     outline: none;
     padding: 5px;
@@ -39,14 +39,14 @@
 }
 
 .search-bar i {
-    color: rgb(122, 122, 122);
+    color: rgb(155, 155, 155);
     transition: 0.3s;
 }
 
 .search-bar button:hover {
-    border-color: rgb(184, 184, 184);
+    border-color: rgb(201, 201, 201);
 }
 
 .search-bar button:hover i {
-    color: rgb(184, 184, 184);
+    color: rgb(201, 201, 201);
 }

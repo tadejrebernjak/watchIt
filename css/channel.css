@@ -44,7 +44,7 @@
 
 .sub-button {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 20px;
@@ -67,7 +67,7 @@
 
 .unsub-button {
     position: absolute;
-    right: 0;
+    right: 20px;
     top: 50%;
     transform: translateY(-50%);
     padding: 10px 20px;
@@ -219,4 +219,13 @@ h3 {
 .about-info h3 {
     font-size:  1.6em;
     margin-top: 0;
+}
+
+.edit-video {
+    margin-top: 10px;
+    font-size: 1.3em;
+}
+
+.edit-video:hover {
+    color: gray;
 }

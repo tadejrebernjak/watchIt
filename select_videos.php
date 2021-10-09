@@ -26,11 +26,11 @@
             . "<div class='thumbnail-container'>"
                 . "<a href='watch.php?id=" . $video['id'] . "'>";
         
-        if (isset($video['thumbnail'])) {           
+        if (isset($video['thumbnail']) && $video['thumbnail'] != "") {           
             echo "<img src='" . $video['thumbnail'] . "'>";
         }
         else {
-            echo "<img src='media/images/no-thumbnail.jpg'>";
+            echo "<img src='media/images/no-thumbnail.jpg' alt='noThumbnail'>";
         }
 
         echo "</a>"
