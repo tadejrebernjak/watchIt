@@ -11,7 +11,7 @@
 <script src="js/header.js"></script>
 <div class="menu" id="menu">
     <header>
-        <div class="menu-icon-container">
+        <div class="menu-icon-container-menu">
             <img class="menu-icon" id="menu-close-icon" src="media/images/menu.png" alt="menu icon" onmouseover="menuHover(this)" onmouseout="menuHoverRelease(this)" onclick="closeMenu()">
         </div>
         <div class="logo-container-menu">
@@ -26,14 +26,11 @@
         <img class="menu-icon" id="menu-open-icon" src="media/images/menu.png" alt="menu icon" onmouseover="menuHover(this)" onmouseout="menuHoverRelease(this)" onclick="openMenu()">
     </div>
     <div class="header-content">
+        <div class="menu-icon-container-two">
+            <img class="menu-icon" id="menu-open-icon-two" src="media/images/menu.png" alt="menu icon" onmouseover="menuHover(this)" onmouseout="menuHoverRelease(this)" onclick="openMenu()">
+        </div>
         <div class="logo-container">
             <a href="index.php"><img src="media/images/logo.png" alt="WatchIT"></a>
-        </div>
-        <div class="search-bar">
-            <input type="text" placeholder="Search" id="search-text"></input>
-            <button id="search-button">
-                <i class="fas fa-search"></i>
-            </button>
         </div>
         <div class="account-info">
             <?php 
@@ -76,6 +73,12 @@
                     . "</ul>";
                 }
             ?>
+        </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search" id="search-text"></input>
+            <button id="search-button">
+                <i class="fas fa-search"></i>
+            </button>
         </div>
     </div>
 </div>

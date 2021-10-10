@@ -1,11 +1,19 @@
 .search-bar {
     position: absolute;
-    margin: auto;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: row;
+    padding: 20px;
+    background-color: rgb(39, 39, 39);
+    border-bottom: 1px solid rgb(78, 78, 78);
+    border-left: 1px solid rgb(78, 78, 78);
+    border-right: 1px solid rgb(78, 78, 78);
+    margin: -1px auto 0 auto;
     width: fit-content;
     left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);  
-    border-radius: 10px;
+    bottom: 0px;
+    transform: translate(-50%, 100%);  
     font-size: 1.2em;
 }
 
@@ -25,7 +33,6 @@
     border: none;
     border: 1px solid rgb(201, 201, 201);
     width: 400px;
-    transition: 0.3s;
 }
 
 .search-bar button {
@@ -49,4 +56,25 @@
 
 .search-bar button:hover i {
     color: rgb(201, 201, 201);
+}
+
+@media screen and (max-width: 800px) {
+	.search-bar {
+        position: static;
+        transform: none;
+        width: 100%;
+        border: none;
+        margin-top: 10px;
+    }  
+}
+
+@media screen and (max-width: 420px) {
+    .search-bar button {
+        margin-top: 10px;
+    }
+
+    .search-bar input:focus {
+        width: 300px;
+    }
+    
 }

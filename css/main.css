@@ -12,10 +12,11 @@ body {
     min-height: 800px;
     position: relative;
     padding: 40px;
-    width: 80%;
+    padding-top: 100px;
+    width: 90%;
     max-width: 1310px;
     padding-bottom: 20px;
-    margin: auto;
+    margin: 0 auto 0 auto;
     background:rgb(27, 27, 27)
 }
 
@@ -120,4 +121,21 @@ hr {
 .align-left {
     text-align: left;
     margin-bottom: 10px;
+}
+
+@media screen and (max-width: 800px) {
+	.content {
+        width: 100%;
+        padding-top: 20px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .video-list {
+        justify-content: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    
 }

@@ -1,11 +1,13 @@
 .video-container {
-    width: 1000px;
+    max-width: 1000px;
+    width: 95%;
     margin: auto;
     display: block;
 }
 
 .video-container video {
-    width: 1000px;
+    max-width: 1000px;
+    width: 100%;
     max-height: 600px;
     border: 1px solid rgb(87, 87, 87);
 }
@@ -16,6 +18,10 @@ table.uploader-info {
 
 .details {
     position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
 }
 
 .channel-details img {
@@ -32,10 +38,6 @@ table.uploader-info {
 }
 
 .video-details {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    right: 20px;
     display: inline;
 }
 

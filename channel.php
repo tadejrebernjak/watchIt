@@ -99,11 +99,9 @@ include 'functions.php';
                     </div>
                 </div>
                 <div class="nav">
-                    <div class="tabs-centered">
-                        <button class="tabs active" onclick="changeTab(this, 'home')">Home</button>
-                        <button class="tabs" onclick="changeTab(this, 'videos')">Videos</button>
-                        <button class="tabs" onclick="changeTab(this, 'about')">About</button>
-                    </div>
+                    <button class="tabs active" onclick="changeTab(this, 'home')">Home</button>
+                    <button class="tabs" onclick="changeTab(this, 'videos')">Videos</button>
+                    <button class="tabs" onclick="changeTab(this, 'about')">About</button>
                 </div>
             </div>
             <div class="tabcontent" id="home">

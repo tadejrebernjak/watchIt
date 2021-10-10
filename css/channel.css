@@ -16,7 +16,10 @@
 .bar {
     width: 100%;
     margin: 10px 0;
-    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .channel-details {
@@ -44,13 +47,10 @@
 }
 
 .sub-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     padding: 10px 20px;
     font-size: 1.25em;
     font-weight: 400;
+    margin-top: 20px;
     text-transform: uppercase;
     background-color: rgba(22, 22, 22, 0.5);
     border: 1px solid rgb(206, 15, 15);
@@ -67,13 +67,10 @@
 }
 
 .unsub-button {
-    position: absolute;
-    right: 20px;
-    top: 50%;
-    transform: translateY(-50%);
     padding: 10px 20px;
     font-size: 1.25em;
     font-weight: 400;
+    margin-top: 20px;
     text-transform: uppercase;
     background-color: rgba(22, 22, 22, 0.5);
     border: 1px solid rgb(15, 152, 206);
@@ -92,11 +89,7 @@
     margin-top: 50px;
     background-color: rgb(22, 22, 22);
     border-radius: 10px;
-}
-
-.tabs-centered {
-    display: inline;
-    margin: auto;
+    justify-content: center;
 }
 
 #videos, #about {
@@ -106,6 +99,7 @@
 .tabs {
     padding: 10px 20px;
     margin-right: 20px;
+    margin-bottom: 10px;
     width: 200px;
     font-size: 1.25em;
     font-weight: 400;
@@ -229,4 +223,14 @@ h3 {
 
 .edit-video:hover {
     color: gray;
+}
+
+@media screen and (max-width: 800px) {
+    .video-list-container {
+        overflow-x: auto;
+    }
+
+    .arrow-left, .arrow-right {
+        display: none;
+    }
 }
