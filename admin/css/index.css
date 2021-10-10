@@ -1,0 +1,37 @@
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.options {
+    position: absolute;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.option {
+    padding: 10px 20px;
+    margin: 20px;
+    width: 200px;
+    font-size: 1.45em;
+    font-weight: 400;
+    text-transform: uppercase;
+    background-color: transparent;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    color: rgb(201, 201, 201);
+    outline: none;
+    transition: 0.5s;
+}
+
+.option:focus {
+    outline: 0;
+}
+
+.option:hover {
+    color: rgb(22, 22, 22);
+    background-color: rgb(201, 201, 201);
+}

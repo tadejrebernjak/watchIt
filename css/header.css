@@ -49,8 +49,12 @@
     margin: 0;
 }
 
-.account-info a {
+.account-info a, .account-info p {
     font-size: 1.7em;
+}
+
+.account-info p {
+    display: inline;
 }
 
 .account-info li {
