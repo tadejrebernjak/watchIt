@@ -119,103 +119,12 @@ include 'functions.php';
                     <button class="horizontal-videos-arrow arrow-right" id="popular-arrow-right">></button>
                     <div class="video-list-horizontal" id="popular-videos">
                         <?php include 'select_channel_videos.php' ?>
-                        <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
                     </div>
                 </div>
             </div>
             <div class="tabcontent" id="videos">
                 <div class="video-list-vertical">
                     <?php include 'select_channel_videos_recent.php' ?>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="video-preview">
-                        <div class='video-preview-content'>
-                            <div class='thumbnail-container'>
-                                <img src="media/images/no-thumbnail.jpg" alt="no thumbnail">
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
             <div class="tabcontent" id="about">

@@ -122,6 +122,10 @@
     color: rgb(204, 204, 204);
 }
 
+.details-container .result-details {
+    font-size: 0.8em;
+}
+
 .result-uploader-username {
     font-size: 1.3em;
     font-weight: 400;
